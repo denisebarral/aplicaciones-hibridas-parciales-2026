@@ -1,0 +1,137 @@
+/* =============================================
+   Librería Los 7 Locos — Estilos globales
+   Paleta editorial vintage latinoamericana
+   ============================================= */
+
+:root {
+    --cream: #f5f0e8;
+    --dark:  #1a1008;
+    --red:   #8b2020;
+    --gold:  #c8a96e;
+}
+
+/* Base */
+body {
+    background-color: var(--cream);
+    color: var(--dark);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, .serif {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--dark) !important;
+    border-bottom: 3px solid var(--red);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold) !important;
+    letter-spacing: 0.02em;
+}
+
+.nav-link { color: var(--gold) !important; }
+.nav-link:hover, .nav-link.active { color: #fff !important; }
+
+.dropdown-menu-dark { background-color: #2a1a10 !important; }
+
+.dropdown-item { color: var(--gold) !important; }
+.dropdown-item:hover, .dropdown-item.active {
+    background-color: var(--red) !important;
+    color: #fff !important;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--red);
+    border-color: var(--red);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #6e1818;
+    border-color: #6e1818;
+}
+
+.btn-outline-primary {
+    color: var(--red);
+    border-color: var(--red);
+}
+.btn-outline-primary:hover {
+    background-color: var(--red);
+    color: #fff;
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border: 1px solid #e0d8c8;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(26, 16, 8, 0.15);
+}
+
+.card-img-top {
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Badge de género (chip dorado sobre las cards) */
+.badge-genero {
+    background-color: var(--gold);
+    color: var(--dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3em 0.7em;
+    border-radius: 20px;
+}
+
+/* Precio en cards */
+.precio {
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Títulos de sección con línea roja inferior */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--gold);
+    border-top: 3px solid var(--red);
+}
+
+footer a { color: var(--gold); text-decoration: none; }
+footer a:hover { color: #fff; }
+
+footer .social-icon img {
+    width: 28px;
+    height: 28px;
+    filter: invert(75%) sepia(30%) saturate(500%) hue-rotate(5deg);
+    transition: filter 0.2s;
+}
+footer .social-icon:hover img {
+    filter: invert(100%);
+}
+
+/* Divisor dorado */
+.gold-divider {
+    border: 0;
+    border-top: 2px solid var(--gold);
+    opacity: 0.4;
+}

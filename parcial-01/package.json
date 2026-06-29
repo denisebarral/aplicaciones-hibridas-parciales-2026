@@ -1,0 +1,29 @@
+{
+  "name": "barral-denise_parcial-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env main.js",
+    "dev": "nodemon --env-file=.env --ignore data/* main.js",
+    "swagger": "node --env-file=.env swagger.js"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+
+  
+  "dependencies": {
+   "express": "^5.2.1",
+   "mongodb": "^7.1.1",
+   "swagger-autogen": "^2.23.7",
+   "swagger-ui-express": "^5.0.1"
+  }
+}
