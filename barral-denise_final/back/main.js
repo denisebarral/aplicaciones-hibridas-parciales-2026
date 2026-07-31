@@ -29,10 +29,19 @@ const PORT = process.env.PORT || 3333;
 
 // ─── MIDDLEWARES GLOBALES ────────────────────────────────────────────────────
 
-// CORS: permite requests desde el front React en localhost:5173
-// Sin esto, el navegador bloquea las peticiones por política de same-origin
+// CORS: permite requests desde el front React.
+// Sin esto, el navegador bloquea las peticiones por política de same-origin.
+//
+// origenesPermitidos siempre incluye localhost:5173 (para seguir developeando local
+// contra este mismo back ya desplegado, si hiciera falta). FRONT_URL es una variable
+// de entorno opcional: el dominio del front en producción (Firebase Hosting). No la
+// hardcodeamos porque todavía no existe — se carga en el dashboard de Render una vez
+// que el front esté desplegado, sin necesidad de tocar este archivo de nuevo.
+const origenesPermitidos = ['http://localhost:5173'];
+if (process.env.FRONT_URL) origenesPermitidos.push(process.env.FRONT_URL);
+
 app.use(cors({
-    origin:         'http://localhost:5173',
+    origin:         origenesPermitidos,
     methods:        ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));

@@ -14,6 +14,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useLibrosService } from '../../services/libros.service.jsx';
+import { API_URL } from '../../services/api.service.jsx';
 
 export default function EliminarLibro() {
     const { id }     = useParams();
@@ -78,7 +79,7 @@ export default function EliminarLibro() {
                         <img
                             src={
                                 libro.imagen
-                                    ? `http://localhost:3333/uploads/${libro.imagen}`
+                                    ? `${API_URL}/uploads/${libro.imagen}`
                                     : `https://picsum.photos/seed/${libro._id}/400/600`
                             }
                             alt={libro.titulo}

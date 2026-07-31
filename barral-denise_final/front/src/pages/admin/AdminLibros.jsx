@@ -17,6 +17,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLibrosService } from '../../services/libros.service.jsx';
+import { API_URL } from '../../services/api.service.jsx';
 
 function formatPrecio(precio) {
     return '$' + Number(precio).toLocaleString('es-AR');
@@ -105,7 +106,7 @@ export default function AdminLibros() {
                                         <img
                                             src={
                                                 libro.imagen
-                                                    ? `http://localhost:3333/uploads/${libro.imagen}`
+                                                    ? `${API_URL}/uploads/${libro.imagen}`
                                                     : `https://picsum.photos/seed/${libro._id}/400/600`
                                             }
                                             alt={libro.titulo}

@@ -14,6 +14,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLibrosService } from '../../services/libros.service.jsx';
+import { API_URL } from '../../services/api.service.jsx';
 
 // Valores exactos de la BD — deben coincidir para que el filtro del Catálogo funcione
 const SECCIONES = ['cronica', 'poesia', 'ensayo', 'cuentos', 'narrativa'];
@@ -214,7 +215,7 @@ export default function EditarLibro() {
                         <div className="d-flex align-items-center gap-3 mb-2">
                             {imagenActual && (
                                 <img
-                                    src={`http://localhost:3333/uploads/${imagenActual}`}
+                                    src={`${API_URL}/uploads/${imagenActual}`}
                                     alt="Portada actual"
                                     style={{ width: 60, height: 80, objectFit: 'cover', borderRadius: 4 }}
                                 />

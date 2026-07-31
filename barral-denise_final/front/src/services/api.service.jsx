@@ -16,6 +16,20 @@
 import { useNavigate } from 'react-router-dom';
 import { useToken } from '../contexts/Session.context.jsx';
 
+/**
+ * URL base del backend, SIN el sufijo /api.
+ *
+ * import.meta.env.VITE_API_URL viene de front/.env.development (localhost:3333)
+ * o front/.env.production (la URL real de Render) — Vite elige el archivo
+ * automáticamente según si corriste "pnpm dev" o "pnpm build".
+ *
+ * La exportamos (no solo la usamos acá adentro) porque también hace falta
+ * fuera de este hook: para armar las URLs de las imágenes de portada
+ * (`${API_URL}/uploads/...}`) en Home.jsx, Catalogo.jsx, LibroDetalle.jsx,
+ * AdminLibros.jsx, EditarLibro.jsx y EliminarLibro.jsx, y para el link a
+ * Swagger en Layout.jsx.
+ */
+export const API_URL = import.meta.env.VITE_API_URL;
 
 /**
  * Hook que devuelve la función call() lista para usar con el token del contexto.
@@ -40,7 +54,7 @@ export function useApi() {
         // Si nosotros seteamos "Content-Type: application/json" manualmente, el boundary no aparece y el back (multer) no puede parsear los campos.
         const esFormData = body instanceof FormData
 
-        return fetch("http://localhost:3333/api" + uri, {
+        return fetch(API_URL + "/api" + uri, {
             method: method,
             headers: {
                 // Si es FormData → sin Content-Type (el browser lo pone solo con el boundary)

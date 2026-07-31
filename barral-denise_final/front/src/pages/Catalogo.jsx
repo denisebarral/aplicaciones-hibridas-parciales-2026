@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLibrosService } from '../services/libros.service.jsx';
 import { useGenerosService } from '../services/generos.service.jsx';
+import { API_URL } from '../services/api.service.jsx';
 
 function formatPrecio(precio) {
     return '$' + Number(precio).toLocaleString('es-AR');
@@ -95,7 +96,7 @@ export default function Catalogo() {
                                 <img
                                     src={
                                         libro.imagen
-                                            ? `http://localhost:3333/uploads/${libro.imagen}`
+                                            ? `${API_URL}/uploads/${libro.imagen}`
                                             : `https://picsum.photos/seed/${libro._id}/400/600`
                                     }
                                     className="card-img-top"

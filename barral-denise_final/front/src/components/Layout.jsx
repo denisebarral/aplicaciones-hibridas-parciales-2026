@@ -12,6 +12,7 @@
 
 import { Outlet } from 'react-router-dom';
 import NavBar from './NavBar.jsx';
+import { API_URL } from '../services/api.service.jsx';
 
 export default function Layout() {
     return (
@@ -41,7 +42,7 @@ export default function Layout() {
                         <div className="col-md-4">
                             <h6 className="serif mb-3" style={{ color: '#fff' }}>Desarrolladores</h6>
                             <p className="small mt-3" style={{ color: '#888' }}>
-                                <a href="http://localhost:3333/api-docs" target="_blank" rel="noreferrer" style={{ color: '#888' }}>
+                                <a href={`${API_URL}/api-docs`} target="_blank" rel="noreferrer" style={{ color: '#888' }}>
                                     API Docs (Swagger) →
                                 </a>
                             </p>
