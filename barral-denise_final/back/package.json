@@ -1,0 +1,28 @@
+{
+  "name": "barral-denise_parcial-02-back",
+  "version": "1.0.0",
+  "description": "API REST — Librería Los 7 Locos",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env main.js",
+    "dev": "nodemon --env-file=.env --ignore uploads/* main.js",
+    "swagger": "node --env-file=.env swagger.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.9.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^7.1.1",
+    "multer": "^2.0.0",
+    "sharp": "^0.35.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
