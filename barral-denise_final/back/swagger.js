@@ -17,9 +17,12 @@ const doc = {
         description: 'API REST para gestionar libros, géneros y autenticación de empleados. ' +
                      'Las rutas GET son públicas. Las rutas de escritura requieren Bearer token JWT.'
     },
-    host:     'localhost:3333',
+    // En local (sin SWAGGER_HOST seteado) usa localhost:3333/http, igual que siempre.
+    // En Render, SWAGGER_HOST=los7locos.onrender.com hace que Swagger UI arme las
+    // pruebas de "Try it out" contra el back real, no contra localhost del visitante.
+    host:     process.env.SWAGGER_HOST || 'localhost:3333',
     basePath: '/api',
-    schemes:  ['http'],
+    schemes:  [process.env.SWAGGER_HOST ? 'https' : 'http'],
     securityDefinitions: {
         // Define el esquema de seguridad Bearer para que Swagger UI muestre el botón "Authorize"
         Bearer: {
