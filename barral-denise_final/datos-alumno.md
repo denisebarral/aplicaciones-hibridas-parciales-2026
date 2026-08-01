@@ -5,6 +5,8 @@
 | **Nombre y apellido** | Denise Barral |
 | **DNI** | 38390537 |
 | **Repo GitHub (ver barral-denise_final)** | https://github.com/denisebarral/aplicaciones-hibridas-parciales-2026 |
+| **Front (Firebase Hosting)** | https://los7locos.web.app/ |
+| **Back (Render)** | https://los7locos.onrender.com |
 | **Materia** | Aplicaciones Híbridas |
 | **Comisión y cuatrimestre** | DWN4AV — 1° cuatrimestre 2026 |
 | **Profesor** | Victor Emanuel Villafañe |
